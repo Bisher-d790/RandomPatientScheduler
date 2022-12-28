@@ -38,4 +38,6 @@ public class PatientsList : MonoBehaviour
     {
         return patients.Contains(patient);
     }
+
+    public IEnumerator<Patient> GetEnumerator() { return patients.GetEnumerator(); }
 }

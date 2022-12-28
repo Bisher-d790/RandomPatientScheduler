@@ -43,6 +43,7 @@ public class UIController : MonoBehaviour
 
     public void StartScheduling()
     {
+        ScheduleManager.Instance.ScheduleWaitingPatients();
     }
 
     public void ShowWarningMessage(string message)

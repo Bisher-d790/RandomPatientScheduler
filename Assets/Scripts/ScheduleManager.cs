@@ -49,4 +49,26 @@ public class ScheduleManager : MonoBehaviour
         patient.ParentList.RemovePatientFromList(patient);
         targetList.AddPatientToList(patient);
     }
+
+    public void ScheduleWaitingPatients()
+    {
+        foreach (Patient patient in patientsWaitList)
+        {
+            SchedulePatientRandomly(patient);
+        }
+    }
+
+    private void SchedulePatientRandomly(Patient patient)
+    {
+        if (patient == null && days.Count > 0) return;
+
+        int randomDayIndex = 0;
+        do
+        {
+            randomDayIndex = Random.Range(0, days.Count);
+        }
+        while (days[randomDayIndex].ContainsPatient(patient));
+
+        MovePatientToDay(patient, days[randomDayIndex].day);
+    }
 }
