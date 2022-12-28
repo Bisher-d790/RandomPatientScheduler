@@ -6,14 +6,26 @@ using UnityEditor.VersionControl;
 
 public class UIController : MonoBehaviour
 {
-    [SerializeField] private ScheduleManager scheduleManager;
-
-    [SerializeField] private RectTransform patientsList;
-    [SerializeField] private List<RectTransform> daysLists;
+    [Header("References")]
     [SerializeField] private Patient patientPrefab;
 
-    [SerializeField] private float patientsYspaceInBetween = 10.0f;
+    #region Singleton
+    static private UIController instance = null;
+    static public UIController Instance
+    {
+        get { return instance; }
+        set
+        {
+            if (instance) Destroy(value);
+            else instance = value;
+        }
+    }
 
+    private void Awake()
+    {
+        Instance = this;
+    }
+    #endregion Singleton
 
     public void CreateNewPatient(TMP_Text NewPatientName)
     {
@@ -26,23 +38,11 @@ public class UIController : MonoBehaviour
         Patient newPatient = Instantiate(patientPrefab);
         newPatient.SetPatientName(NewPatientName.text);
 
-        scheduleManager.AddNewPatient(newPatient);
+        ScheduleManager.Instance.AddNewPatient(newPatient);
     }
 
     public void StartScheduling()
     {
-
-    }
-
-    public void MovePatientToPatientsList(Patient patient)
-    {
-        float lastPatientYPos = -(((RectTransform)patient.transform).rect.height + patientsYspaceInBetween) * patientsList.childCount;
-
-        // Space for the first item
-        lastPatientYPos -= ((RectTransform)patient.transform).rect.height;
-
-        patient.transform.SetParent(patientsList);
-        patient.transform.localPosition = new Vector2(0, lastPatientYPos);
     }
 
     public void ShowWarningMessage(string message)

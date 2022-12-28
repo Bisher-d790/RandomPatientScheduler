@@ -206,8 +206,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1075713857}
   m_HandleRect: {fileID: 1075713856}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.84425503
+  m_Value: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -483,6 +483,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 110546810}
+  - component: {fileID: 110546811}
   m_Layer: 5
   m_Name: TuesdayList
   m_TagString: Untagged
@@ -507,9 +508,24 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 300}
-  m_Pivot: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0.000015258789, y: 0.0008799649}
+  m_SizeDelta: {x: 0, y: 100}
+  m_Pivot: {x: 0.5, y: 1}
+--- !u!114 &110546811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110546809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc1c89f19ed21534db07ede1110296a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listTransform: {fileID: 110546810}
+  patientsYspaceInBetween: 10
+  day: 1
 --- !u!1 &114324216
 GameObject:
   m_ObjectHideFlags: 0
@@ -1028,8 +1044,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 817396591}
   m_HandleRect: {fileID: 817396590}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.84425503
+  m_Value: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1251,7 +1267,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07b3b9d2ba68a3149a33ef5e0a9e41e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiController: {fileID: 713372708}
+  days:
+  - {fileID: 1228208554}
+  - {fileID: 110546811}
+  - {fileID: 820870607}
+  - {fileID: 1656909379}
+  - {fileID: 721963294}
+  - {fileID: 363602829}
+  - {fileID: 313989478}
+  patientsWaitList: {fileID: 1925593978}
 --- !u!1 &313989476
 GameObject:
   m_ObjectHideFlags: 0
@@ -1261,6 +1285,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 313989477}
+  - component: {fileID: 313989478}
   m_Layer: 5
   m_Name: SundayList
   m_TagString: Untagged
@@ -1285,9 +1310,24 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 300}
-  m_Pivot: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0.000015258789, y: 0.0008799649}
+  m_SizeDelta: {x: 0, y: 100}
+  m_Pivot: {x: 0.5, y: 1}
+--- !u!114 &313989478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313989476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc1c89f19ed21534db07ede1110296a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listTransform: {fileID: 313989477}
+  patientsYspaceInBetween: 10
+  day: 6
 --- !u!1 &344361374
 GameObject:
   m_ObjectHideFlags: 0
@@ -1501,6 +1541,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 363602828}
+  - component: {fileID: 363602829}
   m_Layer: 5
   m_Name: SaturdayList
   m_TagString: Untagged
@@ -1525,9 +1566,24 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 300}
-  m_Pivot: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0.000015258789, y: 0.0008799649}
+  m_SizeDelta: {x: 0, y: 100}
+  m_Pivot: {x: 0.5, y: 1}
+--- !u!114 &363602829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 363602827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc1c89f19ed21534db07ede1110296a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listTransform: {fileID: 363602828}
+  patientsYspaceInBetween: 10
+  day: 5
 --- !u!1 &375432611
 GameObject:
   m_ObjectHideFlags: 0
@@ -2987,18 +3043,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dda226137541ab54484d44c570e0acac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scheduleManager: {fileID: 291422087}
-  patientsList: {fileID: 1925593977}
-  daysLists:
-  - {fileID: 1228208553}
-  - {fileID: 110546810}
-  - {fileID: 820870606}
-  - {fileID: 1656909378}
-  - {fileID: 721963293}
-  - {fileID: 363602828}
-  - {fileID: 313989477}
   patientPrefab: {fileID: -598586936301567839, guid: 48af455dec65d4a4e8b80fba698e2005, type: 3}
-  patientsYspaceInBetween: 100
 --- !u!1 &721183992
 GameObject:
   m_ObjectHideFlags: 0
@@ -3143,6 +3188,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 721963293}
+  - component: {fileID: 721963294}
   m_Layer: 5
   m_Name: FridayList
   m_TagString: Untagged
@@ -3167,9 +3213,24 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 300}
-  m_Pivot: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0.000015258789, y: 0.0008799649}
+  m_SizeDelta: {x: 0, y: 100}
+  m_Pivot: {x: 0.5, y: 1}
+--- !u!114 &721963294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721963292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc1c89f19ed21534db07ede1110296a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listTransform: {fileID: 721963293}
+  patientsYspaceInBetween: 10
+  day: 4
 --- !u!1 &771755914
 GameObject:
   m_ObjectHideFlags: 0
@@ -3390,6 +3451,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 820870606}
+  - component: {fileID: 820870607}
   m_Layer: 5
   m_Name: WednesdayList
   m_TagString: Untagged
@@ -3414,9 +3476,24 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 300}
-  m_Pivot: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0.000015258789, y: 0.0008799649}
+  m_SizeDelta: {x: 0, y: 100}
+  m_Pivot: {x: 0.5, y: 1}
+--- !u!114 &820870607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820870605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc1c89f19ed21534db07ede1110296a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listTransform: {fileID: 820870606}
+  patientsYspaceInBetween: 10
+  day: 2
 --- !u!1 &849068632
 GameObject:
   m_ObjectHideFlags: 0
@@ -4310,7 +4387,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 192339841}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.9999959
+  m_Size: 0.9998325
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4472,6 +4549,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1228208553}
+  - component: {fileID: 1228208554}
   m_Layer: 5
   m_Name: MondayList
   m_TagString: Untagged
@@ -4496,9 +4574,24 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 300}
-  m_Pivot: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0.000015258789, y: 0.0008799649}
+  m_SizeDelta: {x: 0, y: 100}
+  m_Pivot: {x: 0.5, y: 1}
+--- !u!114 &1228208554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228208552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc1c89f19ed21534db07ede1110296a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listTransform: {fileID: 1228208553}
+  patientsYspaceInBetween: 10
+  day: 0
 --- !u!1 &1244027136
 GameObject:
   m_ObjectHideFlags: 0
@@ -4582,8 +4675,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 573983932}
   m_HandleRect: {fileID: 573983931}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.84425503
+  m_Value: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5447,11 +5540,11 @@ RectTransform:
   m_Father: {fileID: 713372707}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -10, y: -26.01}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 135, y: -24}
   m_SizeDelta: {x: 623.1893, y: 306.8044}
-  m_Pivot: {x: 1, y: 0.5}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1420653919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6131,6 +6224,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1656909378}
+  - component: {fileID: 1656909379}
   m_Layer: 5
   m_Name: ThursdayList
   m_TagString: Untagged
@@ -6155,9 +6249,24 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 300}
-  m_Pivot: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0.000015258789, y: 0.0008799649}
+  m_SizeDelta: {x: 0, y: 100}
+  m_Pivot: {x: 0.5, y: 1}
+--- !u!114 &1656909379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656909377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc1c89f19ed21534db07ede1110296a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listTransform: {fileID: 1656909378}
+  patientsYspaceInBetween: 10
+  day: 3
 --- !u!1 &1686008527
 GameObject:
   m_ObjectHideFlags: 0
@@ -6241,8 +6350,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1691267371}
   m_HandleRect: {fileID: 1691267370}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.84425503
+  m_Value: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -6444,8 +6553,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 375432613}
   m_HandleRect: {fileID: 375432612}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.84425503
+  m_Value: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -6893,8 +7002,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1008718363}
   m_HandleRect: {fileID: 1008718362}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.84425503
+  m_Value: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -7081,6 +7190,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1925593977}
+  - component: {fileID: 1925593978}
   m_Layer: 5
   m_Name: PatientsList
   m_TagString: Untagged
@@ -7105,9 +7215,23 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000015258789, y: 0.0003965157}
+  m_AnchoredPosition: {x: 0.000015258789, y: 0.0008856534}
   m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 1}
+--- !u!114 &1925593978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925593976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d270d83b82246a3409b1d3eafa5a3e91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listTransform: {fileID: 1925593977}
+  patientsYspaceInBetween: 10
 --- !u!1 &1930742985
 GameObject:
   m_ObjectHideFlags: 0
@@ -7282,8 +7406,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 598969882}
   m_HandleRect: {fileID: 598969881}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.84425503
+  m_Value: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

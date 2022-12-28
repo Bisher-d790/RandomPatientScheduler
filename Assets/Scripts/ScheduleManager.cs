@@ -4,14 +4,49 @@ using UnityEngine;
 
 public class ScheduleManager : MonoBehaviour
 {
-    [SerializeField] private UIController uiController;
+    [Header("References")]
+    [SerializeField] private List<Day> days;
+    [SerializeField] private PatientsList patientsWaitList;
 
-    private List<Patient> patients = new List<Patient>();
+
+    #region Singleton
+    static private ScheduleManager instance = null;
+    static public ScheduleManager Instance
+    {
+        get { return instance; }
+        set
+        {
+            if (instance) Destroy(value);
+            else instance = value;
+        }
+    }
+    private void Awake()
+    {
+        Instance = this;
+    }
+    #endregion Singleton
 
     public void AddNewPatient(Patient patient)
     {
-        patients.Add(patient);
+        patientsWaitList.AddPatientToList(patient);
+    }
 
-        uiController.MovePatientToPatientsList(patient);
+    public void MovePatientToDay(Patient patient, Days dayType)
+    {
+        foreach (Day day in days)
+        {
+            if (day.day == dayType)
+            {
+                day.AddPatientToList(patient);
+            }
+        }
+    }
+
+    public void MovePatientToList(Patient patient, PatientsList targetList)
+    {
+        if (patient == null || targetList.ContainsPatient(patient)) return;
+
+        patient.ParentList.RemovePatientFromList(patient);
+        targetList.AddPatientToList(patient);
     }
 }
