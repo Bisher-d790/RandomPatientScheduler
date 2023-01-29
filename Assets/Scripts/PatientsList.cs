@@ -54,4 +54,6 @@ public class PatientsList : MonoBehaviour
     }
 
     public IEnumerator<Patient> GetEnumerator() { return patients.GetEnumerator(); }
+
+    public int GetCount() { return patients.Count; }
 }

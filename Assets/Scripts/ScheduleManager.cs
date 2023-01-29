@@ -67,8 +67,22 @@ public class ScheduleManager : MonoBehaviour
         {
             randomDayIndex = Random.Range(0, days.Count);
         }
-        while (days[randomDayIndex].ContainsPatient(patient));
+        while (!days[randomDayIndex].CheckCanAddPatient(patient) && GetFirstAvailableFreeSlot(patient));
 
-        MovePatientToDay(patient, days[randomDayIndex].day);
+        if (days[randomDayIndex].CheckCanAddPatient(patient))
+        {
+            MovePatientToDay(patient, days[randomDayIndex].day);
+        }
+    }
+
+    private Day GetFirstAvailableFreeSlot(Patient patient)
+    {
+        foreach (Day day in days)
+        {
+            if (day.CheckCanAddPatient(patient))
+                return day;
+        }
+
+        return null;
     }
 }
