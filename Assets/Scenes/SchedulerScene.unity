@@ -5093,7 +5093,7 @@ MonoBehaviour:
   listTransform: {fileID: 179749500}
   day: 3
   capacityText: {fileID: 2121750955}
-  capacity: 1
+  capacity: 25
 --- !u!114 &936027195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5659,7 +5659,7 @@ MonoBehaviour:
   listTransform: {fileID: 425485371}
   day: 2
   capacityText: {fileID: 1273716863}
-  capacity: 1
+  capacity: 25
 --- !u!114 &983172278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7723,7 +7723,7 @@ MonoBehaviour:
   listTransform: {fileID: 1228208553}
   day: 0
   capacityText: {fileID: 1215470570}
-  capacity: 1
+  capacity: 25
 --- !u!1 &1215470568
 GameObject:
   m_ObjectHideFlags: 0
@@ -9890,7 +9890,7 @@ MonoBehaviour:
   listTransform: {fileID: 927032505}
   day: 4
   capacityText: {fileID: 898412915}
-  capacity: 1
+  capacity: 25
 --- !u!114 &1500013702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12397,7 +12397,7 @@ MonoBehaviour:
   listTransform: {fileID: 592639820}
   day: 1
   capacityText: {fileID: 331425353}
-  capacity: 1
+  capacity: 25
 --- !u!114 &1953687076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13054,7 +13054,7 @@ MonoBehaviour:
   listTransform: {fileID: 1467308656}
   day: 6
   capacityText: {fileID: 1085907545}
-  capacity: 1
+  capacity: 25
 --- !u!114 &2023730446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13357,7 +13357,7 @@ MonoBehaviour:
   listTransform: {fileID: 420005148}
   day: 5
   capacityText: {fileID: 738072217}
-  capacity: 1
+  capacity: 25
 --- !u!114 &2050857641
 MonoBehaviour:
   m_ObjectHideFlags: 0

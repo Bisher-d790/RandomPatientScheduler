@@ -26,14 +26,19 @@ public class UIController : MonoBehaviour
 
     public void CreateNewPatient(TMP_Text NewPatientName)
     {
-        if (!patientPrefab || string.IsNullOrWhiteSpace(NewPatientName.text))
+        CreateNewPatient(NewPatientName.text);
+    }
+
+    public void CreateNewPatient(string NewPatientName)
+    {
+        if (!patientPrefab || string.IsNullOrWhiteSpace(NewPatientName))
         {
             ShowWarningMessage("Input field \"New Patient Name\" is empty!");
             return;
         }
 
         Patient newPatient = Instantiate(patientPrefab);
-        newPatient.SetPatientName(NewPatientName.text);
+        newPatient.SetPatientName(NewPatientName);
 
         ScheduleManager.Instance.AddNewPatient(newPatient);
     }
