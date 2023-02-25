@@ -4059,6 +4059,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   patientPrefab: {fileID: -598586936301567839, guid: 48af455dec65d4a4e8b80fba698e2005, type: 3}
+  errorMessagePrefab: {fileID: 560703630413173349, guid: 4e723cfcfea890c439339f36752412c9, type: 3}
 --- !u!1 &738072215
 GameObject:
   m_ObjectHideFlags: 0

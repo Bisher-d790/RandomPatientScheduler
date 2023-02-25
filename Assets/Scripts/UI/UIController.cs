@@ -5,6 +5,8 @@ public class UIController : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Patient patientPrefab;
+    [SerializeField] private ErrorMessage errorMessagePrefab;
+
 
     #region Singleton
     static private UIController instance = null;
@@ -24,6 +26,7 @@ public class UIController : MonoBehaviour
     }
     #endregion Singleton
 
+
     public void CreateNewPatient(TMP_Text NewPatientName)
     {
         CreateNewPatient(NewPatientName.text);
@@ -33,7 +36,7 @@ public class UIController : MonoBehaviour
     {
         if (!patientPrefab || string.IsNullOrWhiteSpace(NewPatientName))
         {
-            ShowWarningMessage("Input field \"New Patient Name\" is empty!");
+            ShowWarningMessage("Error:", "Input field \"New Patient Name\" is empty!");
             return;
         }
 
@@ -48,8 +51,10 @@ public class UIController : MonoBehaviour
         ScheduleManager.Instance.ScheduleWaitingPatients();
     }
 
-    public void ShowWarningMessage(string message)
+    public void ShowWarningMessage(string title, string message)
     {
-        Debug.LogError(message);
+        ErrorMessage errorMessage = Instantiate(errorMessagePrefab, transform);
+
+        errorMessage.SetTitleAndMessage(title, message);
     }
 }

@@ -62,7 +62,7 @@ public class ImportController : MonoBehaviour
 
         if (hasFailed)
         {
-            UIController.Instance.ShowWarningMessage("No file found, file is empty, or file was not supported.");
+            UIController.Instance.ShowWarningMessage("Error", "No file found, file is empty, or file was not supported.");
         }
 
         ClosePanel();
