@@ -41,10 +41,12 @@ public class PatientsList : MonoBehaviour
 
     private void RefreshContainerListSize()
     {
+        if (patients.Count <= 0) return;
+
         // Get the last patient inside the list
         RectTransform lastPatient = (RectTransform)patients[patients.Count - 1].transform;
 
-        if (lastPatient == null) return;
+        if (!lastPatient) return;
 
         // Get the last patients pos and add the height
         float height = lastPatient.rect.height + Mathf.Abs(lastPatient.localPosition.y);
@@ -56,4 +58,20 @@ public class PatientsList : MonoBehaviour
     public IEnumerator<Patient> GetEnumerator() { return patients.GetEnumerator(); }
 
     public int GetCount() { return patients.Count; }
+
+    public void DeleteAllPatients()
+    {
+        for (int i = patients.Count - 1; i >= 0; i--)
+        {
+            Patient patient = patients[i];
+
+            if (!patient) continue;
+
+            RemovePatientFromList(patient);
+
+            Destroy(patient.gameObject);
+        }
+
+        RefreshContainerListSize();
+    }
 }

@@ -6,6 +6,7 @@ public class UIController : MonoBehaviour
     [Header("References")]
     [SerializeField] private Patient patientPrefab;
     [SerializeField] private ErrorMessage errorMessagePrefab;
+    [SerializeField] private TMP_InputField nameText;
 
 
     #region Singleton
@@ -56,5 +57,12 @@ public class UIController : MonoBehaviour
         ErrorMessage errorMessage = Instantiate(errorMessagePrefab, transform);
 
         errorMessage.SetTitleAndMessage(title, message);
+    }
+
+    public void ClearAllPatients()
+    {
+        ScheduleManager.Instance.ClearAllPatients();
+
+        nameText.text = string.Empty;
     }
 }

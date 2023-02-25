@@ -85,4 +85,14 @@ public class ScheduleManager : MonoBehaviour
 
         return null;
     }
+
+    public void ClearAllPatients()
+    {
+        patientsWaitList.DeleteAllPatients();
+
+        foreach (Day day in days)
+        {
+            day.DeleteAllPatients();
+        }
+    }
 }
