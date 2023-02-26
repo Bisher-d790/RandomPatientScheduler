@@ -5,9 +5,11 @@ using UnityEngine;
 public class ScheduleManager : MonoBehaviour
 {
     [Header("References")]
+    [SerializeField] private Patient patientPrefab;
     [SerializeField] private List<Day> days;
     [SerializeField] private PatientsList patientsWaitList;
 
+    public static int LastUsedID = -1;
 
     #region Singleton
     static private ScheduleManager instance = null;
@@ -25,6 +27,22 @@ public class ScheduleManager : MonoBehaviour
         Instance = this;
     }
     #endregion Singleton
+
+
+    public void CreateNewPatient(string NewPatientName)
+    {
+        if (!patientPrefab || string.IsNullOrWhiteSpace(NewPatientName))
+        {
+            UIController.Instance.ShowWarningMessage("Error:", "Input field \"New Patient Name\" is empty!");
+            return;
+        }
+
+        Patient newPatient = Instantiate(patientPrefab);
+        newPatient.SetPatientName(NewPatientName);
+        newPatient.SetPatientID(++LastUsedID);
+
+        AddNewPatient(newPatient);
+    }
 
     public void AddNewPatient(Patient patient)
     {
@@ -94,5 +112,7 @@ public class ScheduleManager : MonoBehaviour
         {
             day.DeleteAllPatients();
         }
+
+        LastUsedID = -1;
     }
 }

@@ -1412,6 +1412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07b3b9d2ba68a3149a33ef5e0a9e41e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  patientPrefab: {fileID: -598586936301567839, guid: 48af455dec65d4a4e8b80fba698e2005, type: 3}
   days:
   - {fileID: 1204058634}
   - {fileID: 1953687075}
@@ -4194,7 +4195,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dda226137541ab54484d44c570e0acac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patientPrefab: {fileID: -598586936301567839, guid: 48af455dec65d4a4e8b80fba698e2005, type: 3}
   errorMessagePrefab: {fileID: 560703630413173349, guid: 4e723cfcfea890c439339f36752412c9, type: 3}
   nameText: {fileID: 1396449277}
 --- !u!1 &738072215

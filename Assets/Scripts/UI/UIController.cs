@@ -4,7 +4,6 @@ using TMPro;
 public class UIController : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private Patient patientPrefab;
     [SerializeField] private ErrorMessage errorMessagePrefab;
     [SerializeField] private TMP_InputField nameText;
 
@@ -30,21 +29,11 @@ public class UIController : MonoBehaviour
 
     public void CreateNewPatient(TMP_Text NewPatientName)
     {
-        CreateNewPatient(NewPatientName.text);
+        ScheduleManager.Instance.CreateNewPatient(NewPatientName.text);
     }
-
     public void CreateNewPatient(string NewPatientName)
     {
-        if (!patientPrefab || string.IsNullOrWhiteSpace(NewPatientName))
-        {
-            ShowWarningMessage("Error:", "Input field \"New Patient Name\" is empty!");
-            return;
-        }
-
-        Patient newPatient = Instantiate(patientPrefab);
-        newPatient.SetPatientName(NewPatientName);
-
-        ScheduleManager.Instance.AddNewPatient(newPatient);
+        ScheduleManager.Instance.CreateNewPatient(NewPatientName);
     }
 
     public void StartScheduling()
