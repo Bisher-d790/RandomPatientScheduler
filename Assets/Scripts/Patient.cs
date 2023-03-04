@@ -8,9 +8,12 @@ public class Patient : MonoBehaviour
     [SerializeField] private TMP_Text patientName;
     [SerializeField] private TMP_Text patientIDText;
     [SerializeField] private TMP_Text patientCounterText;
+    [SerializeField] private GameObject counterPanel;
     [SerializeField] private GameObject counterUpButton;
     [SerializeField] private GameObject counterDownButton;
     [SerializeField] private int counterLimit = 7;
+
+    private bool isActive = true;
 
     public PatientsList ParentList { get; set; }
     public int PatientId { get; private set; } = -1;
@@ -59,5 +62,12 @@ public class Patient : MonoBehaviour
             counterDownButton.SetActive(false);
 
         if (Count < counterLimit) counterUpButton.SetActive(true);
+    }
+
+    public void SetCounterActive(bool IsActive)
+    {
+        counterPanel.SetActive(IsActive);
+
+        isActive = IsActive;
     }
 }

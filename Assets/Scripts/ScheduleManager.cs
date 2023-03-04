@@ -74,6 +74,15 @@ public class ScheduleManager : MonoBehaviour
     {
         foreach (Patient patient in patientsWaitList)
         {
+            if (patient.Count > 1)
+            {
+                for (int i = 1; i < patient.Count; i++)
+                {
+                    Patient patientInstance = Instantiate(patient);
+                    SchedulePatientRandomly(patientInstance);
+                }
+            }
+
             SchedulePatientRandomly(patient);
         }
     }
@@ -93,6 +102,8 @@ public class ScheduleManager : MonoBehaviour
         {
             MovePatientToDay(patient, days[randomDayIndex].day);
         }
+
+        patient.SetCounterActive(false);
     }
 
     private Day GetFirstAvailableFreeSlot(Patient patient)

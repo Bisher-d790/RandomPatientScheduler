@@ -593,6 +593,7 @@ MonoBehaviour:
   patientName: {fileID: 3269410705128631196}
   patientIDText: {fileID: 3795859641616683201}
   patientCounterText: {fileID: 2045516013482403323}
+  counterPanel: {fileID: 1832740343780331966}
   counterUpButton: {fileID: 7624918933860421840}
   counterDownButton: {fileID: 829714136684215059}
   counterLimit: 7

@@ -36,7 +36,8 @@ public class PatientsList : MonoBehaviour
 
     public bool ContainsPatient(Patient patient)
     {
-        return patients.Contains(patient);
+        return (patients.Contains(patient) || patients.Exists(
+            (patientToCheck) => patientToCheck.PatientId == patient.PatientId));
     }
 
     private void RefreshContainerListSize()
