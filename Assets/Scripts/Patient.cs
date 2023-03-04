@@ -7,19 +7,57 @@ public class Patient : MonoBehaviour
     [Header("References")]
     [SerializeField] private TMP_Text patientName;
     [SerializeField] private TMP_Text patientIDText;
+    [SerializeField] private TMP_Text patientCounterText;
+    [SerializeField] private GameObject counterUpButton;
+    [SerializeField] private GameObject counterDownButton;
+    [SerializeField] private int counterLimit = 7;
 
-    private PatientsList parentList;
-    public PatientsList ParentList { get { return parentList; } set { parentList = value; } }
+    public PatientsList ParentList { get; set; }
+    public int PatientId { get; private set; } = -1;
+    public int Count { get; private set; } = 1;
 
-    private int patientID = -1;
-    public int PatientID { get { return patientID; } }
 
     public string GetPatientName() { return patientName.text; }
     public void SetPatientName(string PatientName) { patientName.text = PatientName; }
 
     public void SetPatientID(int ID)
     {
-        patientID = ID;
+        PatientId = ID;
         patientIDText.text = ID.ToString();
+    }
+
+    public void SetCounter(int NewCount)
+    {
+        if (Count == NewCount || NewCount > counterLimit || NewCount < 1) return;
+
+        while (NewCount < Count) DecrementCounter();
+
+        while (NewCount > Count) IncrementCounter();
+    }
+
+    public void IncrementCounter()
+    {
+        if (Count + 1 > counterLimit) return;
+
+        Count++;
+        patientCounterText.SetText(Count.ToString());
+
+        if (Count + 1 > counterLimit)
+            counterUpButton.SetActive(false);
+
+        if (Count > 1) counterDownButton.SetActive(true);
+    }
+
+    public void DecrementCounter()
+    {
+        if (Count - 1 < 1) return;
+
+        Count--;
+        patientCounterText.SetText(Count.ToString());
+
+        if (Count - 1 < 1)
+            counterDownButton.SetActive(false);
+
+        if (Count < counterLimit) counterUpButton.SetActive(true);
     }
 }

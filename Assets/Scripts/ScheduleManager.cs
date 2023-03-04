@@ -8,6 +8,7 @@ public class ScheduleManager : MonoBehaviour
     [SerializeField] private Patient patientPrefab;
     [SerializeField] private List<Day> days;
     [SerializeField] private PatientsList patientsWaitList;
+    [SerializeField] private int patientInitialCount = 2;
 
     public static int LastUsedID = -1;
 
@@ -40,6 +41,7 @@ public class ScheduleManager : MonoBehaviour
         Patient newPatient = Instantiate(patientPrefab);
         newPatient.SetPatientName(NewPatientName);
         newPatient.SetPatientID(++LastUsedID);
+        newPatient.SetCounter(patientInitialCount);
 
         AddNewPatient(newPatient);
     }
